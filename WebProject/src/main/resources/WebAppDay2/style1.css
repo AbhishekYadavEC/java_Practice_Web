@@ -1,0 +1,10 @@
+/*Code is developed by Abhishek*/
+/* red * mark on required labels */
+.form-group.required label:after {
+    content:"*";
+    color:red;
+  }
+
+.error{
+  color: red;
+  }

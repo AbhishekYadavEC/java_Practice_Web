@@ -1,0 +1,85 @@
+<!--Code is developed by Abhishek-->
+<!DOCTYPE html>
+<html>
+<head><title>HTML Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<form><label for="myInput">Input Field:</label><input type="text" id="myInput"><br><label for="output">Output
+    label:</label><label id="output"></label><br><br>
+    <hr>
+    <label for="myDropdown">Dropdown:</label><select id="myDropdown" name="myDropdown"></select><br><label id="tooltip">Select
+        an option</label>
+  <label for="myDate">Date:</label><input type="text" id="myDateField" name="myDateField" value="" readonly>
+  <div id="datepicker" style="display:none;"></div>
+  <br><br>
+  <hr>
+  <table>
+    <tr>
+      <th>Column 1</th>
+      <th>Column 2</th>
+    </tr>
+    <tr>
+      <td>Row 1</td>
+      <td><input type="checkbox" id="myCheckbox"><label for="myCheckbox">Checkbox</label><br><input type="radio"
+                                                                                                    id="myRadioYes"
+                                                                                                    name="myRadioGroup"
+                                                                                                    value="yes"><label
+              for="myRadioYes">Yes</label><input type="radio" id="myRadioNo" name="myRadioGroup" value="no"
+                                                 checked><label for="myRadioNo">No</label></td>
+    </tr>
+  </table>
+</form>
+</body>
+<script>
+$(document).ready(function() {
+//1. Add an input field in form and on adding value in input field same value should get displayed
+//in a label field next to input field.
+$('#myInput').on('input',function(){
+$('#output').text($(this).val());
+});
+// Add values to the dropdown
+$("#myDropdown").append("<option value='Select Option'>Select Option</option>");
+$("#myDropdown").append("<option value='Option 1'>Option 1</option>");
+$("#myDropdown").append("<option value='Option 2'>Option 2</option>");
+// Show selected value in tooltip
+$("#myDropdown").change(function() {
+var selectedValue = $(this).val();
+$("#tooltip").text(selectedValue);
+});
+});
+$(document).ready(function() {
+// Hide datepicker and enable text field
+$('#myDate').datepicker({
+showOn:"button",
+buttonImageOnly:true,
+buttonText:"Select Date",
+buttonImage:"calender.png"
+});
+$('#datepicker').hide();
+$('#myDate').click(function(){
+return true;});
+});
+$(document).ready(function() {
+const myCheckbox = $('#myCheckbox');
+const myRadioYes = $('#myRadioYes');
+const myRadioNo = $('#myRadioNo');
+myCheckbox.change(function() {
+if (myCheckbox.prop('checked')) {
+myRadioYes.prop('checked', true);
+myRadioNo.prop('checked', false);
+} else {
+myRadioYes.prop('checked', false);
+myRadioNo.prop('checked', true);
+}
+});
+myRadioYes.change(function() {
+myCheckbox.prop('checked', true);
+});
+myRadioNo.change(function() {
+myCheckbox.prop('checked', false);
+});
+});
+
+</script>
+</html>

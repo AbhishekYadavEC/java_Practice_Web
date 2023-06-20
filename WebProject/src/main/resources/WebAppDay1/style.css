@@ -1,0 +1,156 @@
+/*
+Developed by Abhishek Yadav
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: 'Verdana';
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.p-05-1,
+input, select {
+    padding: .5rem 1rem;
+}
+
+nav {
+    height: 45px;
+    overflow: hidden;
+    background: #ececec;
+    color: #666;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+}
+
+nav>ul {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding-left: 1rem;
+}
+
+nav>ul>li {
+    list-style: none;
+    height: 100%;
+}
+
+nav>ul>li>a {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+nav>ul>li>a:hover {
+    background: #ccc;
+}
+
+main {
+    margin-top: 45px;
+}
+
+.main-heading {
+    padding-top: 1rem;
+}
+
+.mandatory-red {
+    color: #ff0000;
+}
+
+form {
+    border: 1px solid #ececec;
+}
+
+.form-group {
+    padding-top: 1rem;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+label {
+    padding-bottom: .5rem;
+}
+
+table,
+th,
+td {
+    border: 1px solid #ececec;
+    border-collapse: collapse;
+}
+
+table {
+    margin: .5rem;
+    width: -webkit-fill-available;
+}
+
+th {
+    text-align: left;
+}
+
+th, td {
+    padding: .5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+table input {
+    width: 100%;
+}
+
+table input[type="checkbox"] {
+    margin: .5rem;
+    height: 100%;
+    width: fit-content;
+}
+
+.submit-group {
+    position: relative;
+    width: 100%;
+}
+
+.btn-group {
+    position: absolute !important;
+    right: 0;
+    padding-top: 1rem;
+}
+
+input[type="submit"], button.btn {
+    padding: .5rem 1rem;
+    background: #007bff;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.flex{
+    display: flex;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+
+.dropdown-holder{
+    gap: .2rem;
+    align-items: center;
+}
